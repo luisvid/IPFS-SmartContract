@@ -75,10 +75,12 @@ class App extends Component {
         console.error(error)
         return
       }
+      console.log("Submitting hash to SmartContract...")
        this.state.contract.methods.set(result[0].hash).send({ from: this.state.account }).then((r) => {
          return this.setState({ memeHash: result[0].hash })
        })
     })
+
   }
 
   render() {
@@ -87,24 +89,25 @@ class App extends Component {
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <a
             className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="http://www.dappuniversity.com/bootcamp"
+            href="https://github.com/dappuniversity/meme_of_the_day"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Meme of the Day
+            IPFS -> Ethereum Smart Contract
           </a>
+          <ul className="navbar-nav px-3">
+          <li>
+            <small className="text-white">{this.state.account}</small>
+          </li>
+          </ul>
         </nav>
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
-                <a
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={`https://ipfs.infura.io/ipfs/${this.state.memeHash}`} />
-                </a>
+
+                  <img alt="" src={`https://ipfs.infura.io/ipfs/${this.state.memeHash}`} />
+
                 <p>&nbsp;</p>
                 <h2>Change Meme</h2>
                 <form onSubmit={this.onSubmit} >
