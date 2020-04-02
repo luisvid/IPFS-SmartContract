@@ -1,21 +1,24 @@
-Para instalar
+# IPFS-SmartContract
+Almacena un archivo en IPFS y el hash del archivo en un Smart Contract
 
-npm install
+### Para instalar
 
-Arrancar Ganache y conectar MetaMask
+    npm install
 
-Para compilar smart contract
+### Arrancar Ganache y conectar MetaMask
 
-truffle compile
-truffle migrate
+### Para compilar smart contract
 
-Para probar smart contract desde la consola
+    truffle compile
+    truffle migrate
 
-truffle console
-const meme = await Meme.deployed()
-meme.set("abcd1234")
-memeHash = meme.get()
+### Para probar smart contract desde la consola
 
-Para arrancar server de prueba de la webapp
+    truffle console
+    const meme = await Meme.deployed()
+    meme.set("abcd1234")
+    memeHash = meme.get()
 
-npm run start
+### Para arrancar server de prueba de la webapp
+
+    npm run start
